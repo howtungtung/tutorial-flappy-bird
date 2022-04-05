@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-public class Column : MonoBehaviour 
+namespace Complete
 {
-	void OnTriggerEnter2D(Collider2D other)
+	public class Column : MonoBehaviour
 	{
-		if(other.GetComponent<Bird>() != null)
+		void OnTriggerEnter2D(Collider2D other)
 		{
-			//If the bird hits the trigger collider in between the columns then
-			//tell the game control that the bird scored.
-			GameControl.instance.BirdScored();
+			if (other.GetComponent<Bird>() != null)
+			{
+				//If the bird hits the trigger collider in between the columns then
+				//tell the game control that the bird scored.
+				GameControl.instance.BirdScored();
+			}
 		}
 	}
+
 }
